@@ -11,12 +11,12 @@ const HeroSection = ({ title, description, image }) => {
                 backgroundImage: `url(${image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                minHeight: { xs: "300px", md: "400px" }, // Adjust hero height for mobile and desktop
+                minHeight: { xs: "300px", sm: "350px", md: "450px" }, // Adjusted height across screen sizes
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 textAlign: "center",
-                padding: { xs: "20px", md: "40px" }, // Responsive padding
+                padding: { xs: "16px", sm: "24px", md: "40px" }, // Responsive padding
                 color: "#fff",
                 "&::before": {
                     content: '""',
@@ -25,7 +25,7 @@ const HeroSection = ({ title, description, image }) => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent black overlay
+                    backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent overlay
                     zIndex: 1,
                 },
             }}
@@ -40,7 +40,8 @@ const HeroSection = ({ title, description, image }) => {
                     gutterBottom
                     sx={{
                         fontWeight: "bold",
-                        fontSize: { xs: "2rem", md: "3rem" }, // Responsive font size for title
+                        fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" }, // Responsive title font size
+                        lineHeight: 1.2,
                     }}
                 >
                     {title}
@@ -49,8 +50,10 @@ const HeroSection = ({ title, description, image }) => {
                     variant="h6"
                     component="p"
                     sx={{
-                        fontSize: { xs: "1rem", md: "1.25rem" }, // Responsive font size for description
-                        mt: 2,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" }, // Responsive description font size
+                        mt: { xs: 1, md: 2 },
+                        maxWidth: { xs: "100%", sm: "80%", md: "100%" }, // Width adjustments
+                        mx: "auto", // Center alignment on smaller screens
                     }}
                 >
                     {description}

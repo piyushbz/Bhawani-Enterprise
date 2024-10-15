@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Grid, IconButton, Container, Link as MuiLink } from '@mui/material';
-import { Link } from 'react-router-dom'; // Import React Router Link
+import { Link } from 'react-router-dom';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -28,18 +28,35 @@ const footerLinks = [
     },
 ];
 
+const sectionTitleStyles = {
+    fontWeight: 'bold',
+    mb: 1,
+    fontSize: { xs: '1.1rem', md: '1.3rem' },
+};
+
+const linkStyles = {
+    display: 'block',
+    color: 'white',
+    mb: 0.8,
+    fontSize: { xs: '0.9rem', md: '1rem' },
+    textDecoration: 'none',
+};
+
+const contactInfoStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    mb: 1,
+    fontSize: { xs: '0.9rem', md: '1rem' },
+};
+
 export default function Footer() {
     return (
-        <Box sx={{ backgroundColor: '#1f1f1f', color: 'white', padding: '40px 20px' }}>
+        <Box sx={{ backgroundColor: '#1f1f1f', color: 'white', p: { xs: 3, md: 5 } }}>
             <Container maxWidth="lg">
-                <Grid container spacing={4} style={{ justifyContent: 'space-between' }}>
-                    {/* Dynamic Footer Links */}
+                <Grid container spacing={4} justifyContent="space-between">
                     {footerLinks.map((section, index) => (
-                        <Grid item xs={6} sm={4} md={2} key={index}>
-                            <Typography
-                                variant="h6"
-                                sx={{ fontWeight: 'bold', marginBottom: 1, fontSize: '1rem' }}
-                            >
+                        <Grid item xs={12} sm={4} md={2} key={index}>
+                            <Typography variant="h6" sx={sectionTitleStyles}>
                                 {section.title}
                             </Typography>
                             {section.links.map((link, linkIndex) => (
@@ -48,7 +65,7 @@ export default function Footer() {
                                     to={link.path}
                                     key={linkIndex}
                                     underline="none"
-                                    sx={{ display: 'block', color: 'white', marginBottom: 0.5 }}
+                                    sx={linkStyles}
                                 >
                                     {link.name}
                                 </MuiLink>
@@ -56,50 +73,45 @@ export default function Footer() {
                         </Grid>
                     ))}
 
-                    {/* Registered Office Section */}
                     <Grid item xs={12} sm={4} md={3}>
-                        <Typography
-                            variant="h6"
-                            sx={{ fontWeight: 'bold', marginBottom: 1, fontSize: '1rem' }}
-                        >
+                        <Typography variant="h6" sx={sectionTitleStyles}>
                             REGISTERED OFFICE
                         </Typography>
-                        <Typography sx={{ fontSize: '0.9rem', marginBottom: 1 }}>
+                        <Typography sx={{ mb: 1, fontSize: { xs: '0.85rem', md: '0.95rem' } }}>
                             <b>Bhawani Enterprise Pvt. Ltd.</b>
                             <br />
-                            83 Subhash Nagar Pal Road, Jodhpur, Rajasthan.<br />Pincode: 342008
+                            83 Subhash Nagar Pal Road, Jodhpur, Rajasthan.<br />
+                            Pincode: 342008
                         </Typography>
 
-                        {/* Contact Information */}
-                        <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-                            <PhoneIcon sx={{ color: '#cddc39', marginRight: 1 }} />
+                        <Box sx={contactInfoStyles}>
+                            <PhoneIcon sx={{ color: '#cddc39', mr: 1 }} />
                             <Typography>+91-9950498083</Typography>
                         </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <EmailIcon sx={{ color: '#cddc39', marginRight: 1 }} />
+                        <Box sx={contactInfoStyles}>
+                            <EmailIcon sx={{ color: '#cddc39', mr: 1 }} />
                             <Typography>info@bhawanienterprise.com</Typography>
                         </Box>
                     </Grid>
                 </Grid>
 
-                {/* Footer Bottom Section */}
                 <Box
                     sx={{
                         borderTop: '1px solid #333',
-                        paddingTop: 2,
-                        marginTop: 3,
+                        pt: 2,
+                        mt: 3,
                         display: 'flex',
-                        alignItems: 'center',
                         flexDirection: { xs: 'column', md: 'row' },
                         justifyContent: 'center',
+                        alignItems: 'center',
+                        fontSize: { xs: '0.8rem', md: '1rem' },
                     }}
                 >
-                    <Typography variant="body2" sx={{ marginBottom: { xs: 1, md: 0 } }}>
+                    <Typography variant="body2" sx={{ mb: { xs: 1, md: 0 } }}>
                         © Bhawani Exporters Pvt. Ltd. 2024. All Rights Reserved.
                     </Typography>
                 </Box>
 
-                {/* Scroll to Top Button */}
                 <IconButton
                     sx={{
                         backgroundColor: '#8bc34a',
@@ -107,10 +119,11 @@ export default function Footer() {
                         bottom: 20,
                         right: 20,
                         ':hover': { backgroundColor: '#7cb342' },
+                        fontSize: { xs: '1.5rem', md: '2rem' },
                     }}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
-                    <KeyboardArrowUpIcon sx={{ color: 'white' }} />
+                    <KeyboardArrowUpIcon sx={{ color: 'white', fontSize: 'inherit' }} />
                 </IconButton>
             </Container>
         </Box>

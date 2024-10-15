@@ -12,17 +12,15 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import emailjs from 'emailjs-com';
-import { ToastContainer, toast } from "react-toastify"; // Import Toastify
-import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import { ToastContainer, toast } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css"; 
 
-// import Recaptcha from "react-google-recaptcha"; // Assuming you're using Recaptcha
-
-// Custom styled button
 const CustomButton = styled(Button)({
   backgroundColor: "#A6C111",
   color: "#fff",
   padding: "10px 20px",
   margin: "10px",
+  fontSize: "1rem",
   "&:hover": {
     backgroundColor: "#94AF0D",
   },
@@ -47,11 +45,10 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     emailjs.send('service_fnoquif', 'template_hinqxpm', formData, 'Vc0YK2CGGx_DPEthk')
       .then((response) => {
         console.log('Email sent successfully!', response.status, response.text);
-        toast.success("Message sent successfully!"); // Show success toast
+        toast.success("Message sent successfully!");
         handleClear();
       }, (err) => {
         console.error('Failed to send email. Error: ', err);
@@ -74,17 +71,21 @@ const ContactUs = () => {
       sx={{
         backgroundColor: "#000",
         color: "#fff",
-        // minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "20px",
+        p: { xs: 3, md: 5 },
       }}
     >
       <Container maxWidth="md">
-        <Typography variant="h4" sx={{ textAlign: "center", mb: 4, fontWeight:'bold' }}>
+        <Typography 
+          variant="h4" 
+          align="center" 
+          sx={{ fontWeight: 'bold', mb: 3, fontSize: { xs: "1.8rem", md: "2.4rem" } }}
+        >
           Write To Us
         </Typography>
+        
         <form onSubmit={handleSubmit}>
           <Box
             sx={{
@@ -108,21 +109,12 @@ const ContactUs = () => {
                 color: "#fff",
                 borderColor: "#333",
                 mb: 2,
+                width: { xs: "100%", sm: "48%" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "#fff",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#A6C111",
-                  },
+                  "& fieldset": { borderColor: "#fff" },
+                  "&:hover fieldset": { borderColor: "#A6C111" },
                 },
-                "& .MuiInputLabel-root": {
-                  color: "#fff",
-                },
-                "& .MuiOutlinedInput-input": {
-                  color: "#fff",
-                },
-                width: { xs: "100%", sm: "48%" }, // Responsive width
+                "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#fff" },
               }}
             />
             <TextField
@@ -137,21 +129,12 @@ const ContactUs = () => {
               sx={{
                 backgroundColor: "#101010",
                 mb: 2,
-                width: { xs: "100%", sm: "48%" }, // Responsive width
+                width: { xs: "100%", sm: "48%" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "#fff",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#A6C111",
-                  },
+                  "& fieldset": { borderColor: "#fff" },
+                  "&:hover fieldset": { borderColor: "#A6C111" },
                 },
-                "& .MuiInputLabel-root": {
-                  color: "#fff",
-                },
-                "& .MuiOutlinedInput-input": {
-                  color: "#fff",
-                },
+                "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#fff" },
               }}
             />
           </Box>
@@ -177,19 +160,10 @@ const ContactUs = () => {
                 mb: 2,
                 width: { xs: "100%", sm: "48%" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "#fff",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#A6C111",
-                  },
+                  "& fieldset": { borderColor: "#fff" },
+                  "&:hover fieldset": { borderColor: "#A6C111" },
                 },
-                "& .MuiInputLabel-root": {
-                  color: "#fff",
-                },
-                "& .MuiOutlinedInput-input": {
-                  color: "#fff",
-                },
+                "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#fff" },
               }}
             />
             <FormControl
@@ -197,33 +171,20 @@ const ContactUs = () => {
               sx={{
                 width: { xs: "100%", sm: "48%" },
                 mb: 2,
-                "& .MuiInputLabel-root": {
-                  color: "#fff",
-                },
+                "& .MuiInputLabel-root": { color: "#fff" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "#fff",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#A6C111",
-                  },
-                  "& .MuiOutlinedInput-input": {
-                    color: "#fff",
-                  },
+                  "& fieldset": { borderColor: "#fff" },
+                  "&:hover fieldset": { borderColor: "#A6C111" },
+                  "& .MuiOutlinedInput-input": { color: "#fff" },
                 },
               }}
             >
-              <InputLabel>Regarding select</InputLabel>
+              <InputLabel>Regarding</InputLabel>
               <Select
                 name="regarding"
                 value={formData.regarding}
                 onChange={handleChange}
-                sx={{
-                  color: "#fff",
-                  "& .MuiSvgIcon-root": {
-                    color: "#fff",
-                  },
-                }}
+                sx={{ color: "#fff", "& .MuiSvgIcon-root": { color: "#fff" } }}
               >
                 <MenuItem value={"Partner"}>To Partner with us</MenuItem>
                 <MenuItem value={"Query"}>General Query</MenuItem>
@@ -245,28 +206,18 @@ const ContactUs = () => {
               backgroundColor: "#101010",
               mb: 3,
               "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "#fff",
-                },
-                "&:hover fieldset": {
-                  borderColor: "#A6C111",
-                },
+                "& fieldset": { borderColor: "#fff" },
+                "&:hover fieldset": { borderColor: "#A6C111" },
               },
-              "& .MuiInputLabel-root": {
-                color: "#fff",
-              },
-              "& .MuiOutlinedInput-input": {
-                color: "#fff",
-              },
+              "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#fff" },
             }}
           />
 
-          {/* Buttons */}
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <CustomButton variant="contained" onClick={handleClear}>
+          <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+            <CustomButton variant="contained" onClick={handleClear} sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
               Clear
             </CustomButton>
-            <CustomButton variant="contained" type="submit">
+            <CustomButton variant="contained" type="submit" sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
               Submit
             </CustomButton>
           </Box>

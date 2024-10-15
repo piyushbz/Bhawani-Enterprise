@@ -4,10 +4,8 @@ import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps
 import { Tooltip, TooltipProvider } from "react-tooltip";
 import PublicIcon from "@mui/icons-material/Public";
 
-// Updated URL to reliable TopoJSON source
 const mapUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
-// Arbitrary country coordinates for spice exports
 const countryLocations = [
   { name: "Finland", coordinates: [25.748151, 61.92411] },
   { name: "United States", coordinates: [-95.712891, 37.09024] },
@@ -50,69 +48,91 @@ const MapComponent = () => {
           textAlign: "center",
           backgroundColor: "#1f1f1f",
           color: "#fff",
-          padding: '32px 0px',
-          width: "100%",   // Ensure full width
+          padding: { xs: '20px 0px', md: '32px 0' },
+          width: "100%",
         }}
       >
         <Container maxWidth="lg">
-        <Typography variant="h4" gutterBottom style={{fontWeight:'bold'}}>
-          Vintage Values, Tomorrow's Technology, Global Presence
-        </Typography>
-
-        <Box sx={{ position: "relative", display: "inline-block", width: "100%" }}>
-          <ComposableMap
-            projectionConfig={{ scale: 180 }} // Increased scale for larger map
-            width={1000}                      // Increased map width
-            height={500}                      // Increased map height
-            style={{ width: "100%", height: "auto" }}
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              fontWeight: 'bold',
+              fontSize: { xs: '1.5rem', md: '2rem' },
+            }}
           >
-            {/* Render World Map */}
-            <Geographies geography={mapUrl}>
-              {({ geographies }) =>
-                geographies.map((geo) => (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    fill="#2a2a2a"
-                    stroke="#444"
+            Vintage Values, Tomorrow's Technology, Global Presence
+          </Typography>
+
+          <Box sx={{ position: "relative", display: "inline-block", width: "100%" }}>
+            <ComposableMap
+              projectionConfig={{ scale: 140 }} // Scaled for mobile responsiveness
+              width={800}                       // Responsive width
+              height={400}                      // Responsive height
+              style={{ width: "100%", height: "auto" }}
+            >
+              <Geographies geography={mapUrl}>
+                {({ geographies }) =>
+                  geographies.map((geo) => (
+                    <Geography
+                      key={geo.rsmKey}
+                      geography={geo}
+                      fill="#2a2a2a"
+                      stroke="#444"
+                      style={{
+                        default: { outline: "none" },
+                        hover: { fill: "#333", outline: "none" },
+                        pressed: { fill: "#222", outline: "none" },
+                      }}
+                    />
+                  ))
+                }
+              </Geographies>
+
+              {countryLocations.map(({ name, coordinates }) => (
+                <Marker key={name} coordinates={coordinates}>
+                  <circle
+                    data-tooltip-id="tooltip"
+                    data-tooltip-content={name}
+                    r={5}
+                    fill="#1976d2"
+                    stroke="#fff"
+                    strokeWidth={2}
                     style={{
-                      default: { outline: "none" },
-                      hover: { fill: "#333", outline: "none" },
-                      pressed: { fill: "#222", outline: "none" },
+                      cursor: "pointer",
+                      transition: "transform 0.2s ease-in-out",
                     }}
+                    onMouseEnter={(e) => (e.target.style.transform = "scale(1.2)")}
+                    onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
                   />
-                ))
-              }
-            </Geographies>
+                </Marker>
+              ))}
+            </ComposableMap>
+            <Tooltip id="tooltip" />
+          </Box>
 
-            {/* Render Country Markers */}
-            {countryLocations.map(({ name, coordinates }) => (
-              <Marker key={name} coordinates={coordinates}>
-                <circle
-                  data-tooltip-id="tooltip"
-                  data-tooltip-content={name}
-                  r={5}
-                  fill="#1976d2"
-                  stroke="#fff"
-                  strokeWidth={2}
-                  style={{
-                    cursor: "pointer",
-                    transition: "transform 0.2s ease-in-out",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.transform = "scale(1.2)")}
-                  onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
-                />
-              </Marker>
-            ))}
-          </ComposableMap>
-          <Tooltip id="tooltip" />
-        </Box>
-
-        <Typography variant="h5" sx={{ marginTop: 2, display: "flex", alignItems: "center", justifyContent: "center", fontWeight:'bold' }}>
-          Serving <span style={{ color: "#f44336", fontWeight: "bold", marginRight: "4px", marginLeft: "8px" }}>30+</span> 
-          <PublicIcon style={{ color: "#f44336", marginRight:"8px", fontSize:'48px' }} />
-          Countries
-        </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              marginTop: 2,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontWeight: 'bold',
+              fontSize: { xs: '1.2rem', md: '1.5rem' },
+            }}
+          >
+            Serving
+            <span style={{ color: "#f44336", fontWeight: "bold", margin: "0 4px" }}>30+</span>
+            <PublicIcon
+              sx={{
+                color: "#f44336",
+                marginRight: "8px",
+                fontSize: { xs: '32px', md: '48px' },
+              }}
+            />
+            Countries
+          </Typography>
         </Container>
       </Box>
     </TooltipProvider>

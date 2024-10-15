@@ -18,7 +18,7 @@ function About() {
       />
 
       <Container maxWidth="lg">
-        <Grid container spacing={4} alignItems="center" justifyContent="center" style={{padding:'16px 0px'}}>
+        <Grid container spacing={4} alignItems="center" justifyContent="center" sx={{ padding: { xs: '16px 8px', md: '32px 0' } }}>
           {/* Image Section */}
           <Grid item xs={12} sm={6}>
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -42,8 +42,9 @@ function About() {
               variant="h5" 
               sx={{ 
                 fontWeight: 'bold', 
-                marginBottom: 2, 
-                textAlign: 'center' 
+                mb: 2, 
+                textAlign: { xs: 'center', sm: 'left' },
+                fontSize: { xs: '1.5rem', sm: '1.75rem' } // Responsive title font size
               }}
             >
               About Bhawani Spice
@@ -53,10 +54,10 @@ function About() {
               variant="body1" 
               sx={{ 
                 lineHeight: 1.8, 
-                fontSize: '1rem', 
-                marginBottom: 2,
+                fontSize: { xs: '0.9rem', sm: '1rem' }, // Responsive font size for paragraphs
+                mb: 2,
                 textAlign: 'justify',
-                fontWeight:'bold'
+                fontWeight: 'bold'
               }}
             >
               As a family-owned enterprise, the Bhawani Group owes its legacy to the 
@@ -67,8 +68,8 @@ function About() {
               variant="body1" 
               sx={{ 
                 lineHeight: 1.8, 
-                fontSize: '1rem', 
-                marginBottom: 2,
+                fontSize: { xs: '0.9rem', sm: '1rem' },
+                mb: 2,
                 textAlign: 'justify'
               }}
             >
@@ -81,7 +82,7 @@ function About() {
               variant="body1" 
               sx={{ 
                 lineHeight: 1.8, 
-                fontSize: '1rem',
+                fontSize: { xs: '0.9rem', sm: '1rem' },
                 textAlign: 'justify'
               }}
             >

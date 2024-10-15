@@ -14,7 +14,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 
 const navLinks = [
   { label: 'Home', link: '/' },
@@ -22,6 +22,7 @@ const navLinks = [
   { label: 'Powders', link: '/product/powders' },
   { label: 'Spice Blends', link: '/product/spice-blends' },
   { label: 'About Us', link: '/about' },
+  { label: 'Contact Us', link: '/contact' }, // Added Contact Us here
 ];
 
 export default function Navbar() {
@@ -32,17 +33,35 @@ export default function Navbar() {
   const handleDrawerToggle = () => setDrawerOpen(!drawerOpen);
 
   const drawerContent = (
-    <Box sx={{ width: 250, padding: 2 }}>
+    <Box
+      sx={{
+        width: 250,
+        padding: 2,
+        backgroundColor: '#1f1f1f', // Same color as navbar
+        height: '100%',
+      }}
+    >
       <List>
         {navLinks.map((item, index) => (
-          <ListItem 
-            button 
-            key={index} 
-            component={Link} 
-            to={item.link} 
-            onClick={handleDrawerToggle} // Close drawer on click
+          <ListItem
+            button
+            key={index}
+            component={Link}
+            to={item.link}
+            onClick={handleDrawerToggle}
+            sx={{
+              color: 'white',
+              textAlign: 'center',
+              ':hover': { backgroundColor: '#333' },
+            }}
           >
-            <ListItemText primary={item.label} />
+            <ListItemText
+              primary={item.label}
+              primaryTypographyProps={{
+                fontSize: { xs: '1rem', md: '1.2rem' },
+                fontWeight: 'bold',
+              }}
+            />
           </ListItem>
         ))}
       </List>
@@ -88,25 +107,33 @@ export default function Navbar() {
           </>
         ) : (
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {navLinks.map((item, index) => (
+            {navLinks.slice(0, -1).map((item, index) => (
               <Button
                 key={index}
                 component={Link}
                 to={item.link}
-                sx={{ color: 'white', fontSize: '1rem', textTransform: 'none' }}
+                sx={{
+                  color: 'white',
+                  fontSize: { xs: '0.9rem', md: '1rem' },
+                  textTransform: 'none',
+                  marginLeft: { md: 1 },
+                }}
               >
                 {item.label}
               </Button>
             ))}
             <Button
               variant="contained"
+              component={Link}
+              to="/contact"
               sx={{
                 backgroundColor: '#d32f2f',
                 ':hover': { backgroundColor: '#c62828' },
                 marginLeft: 2,
+                fontSize: { xs: '0.9rem', md: '1rem' },
+                textTransform: 'none',
+                fontWeight: 'bold',
               }}
-              component={Link}
-              to="/contact"
             >
               Contact Us
             </Button>
