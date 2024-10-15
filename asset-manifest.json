@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Bhawani-Enterprise/static/css/main.a94a38e0.css",
-    "main.js": "/Bhawani-Enterprise/static/js/main.8714ee54.js",
+    "main.js": "/Bhawani-Enterprise/static/js/main.d151eaf1.js",
     "static/media/aboutUs.png": "/Bhawani-Enterprise/static/media/aboutUs.062803e76d82ff2c8755.png",
     "static/media/aboutusBack.png": "/Bhawani-Enterprise/static/media/aboutusBack.800cae51720677fc0c64.png",
     "static/media/wholeSpices.png": "/Bhawani-Enterprise/static/media/wholeSpices.a1324271f7bf4a7dd123.png",
@@ -58,10 +58,10 @@
     "static/media/slick.woff": "/Bhawani-Enterprise/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Bhawani-Enterprise/index.html",
     "main.a94a38e0.css.map": "/Bhawani-Enterprise/static/css/main.a94a38e0.css.map",
-    "main.8714ee54.js.map": "/Bhawani-Enterprise/static/js/main.8714ee54.js.map"
+    "main.d151eaf1.js.map": "/Bhawani-Enterprise/static/js/main.d151eaf1.js.map"
   },
   "entrypoints": [
     "static/css/main.a94a38e0.css",
-    "static/js/main.8714ee54.js"
+    "static/js/main.d151eaf1.js"
   ]
 }
