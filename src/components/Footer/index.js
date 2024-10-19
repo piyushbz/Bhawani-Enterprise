@@ -86,7 +86,7 @@ export default function Footer() {
 
                         <Box sx={contactInfoStyles}>
                             <PhoneIcon sx={{ color: '#cddc39', mr: 1 }} />
-                            <Typography>+91-9950498083</Typography>
+                            <Typography>+91-9079037599</Typography>
                         </Box>
                         <Box sx={contactInfoStyles}>
                             <EmailIcon sx={{ color: '#cddc39', mr: 1 }} />

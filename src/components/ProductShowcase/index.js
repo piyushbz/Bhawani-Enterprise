@@ -61,7 +61,7 @@ const ProductShowcase = ({ products }) => {
   return (
     <>
       {/* Product Grid */}
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2} justifyContent="center" style={{marginBottom:'36px'}}>
         {products.map((product) => (
           <Grid
             item
@@ -151,8 +151,8 @@ const ProductShowcase = ({ products }) => {
             variant="contained"
             style={{
               backgroundColor: "#8bc34a",
-              fontSize: isSmallScreen ? "0.8rem" : "1rem",
-              padding: isSmallScreen ? "8px 16px" : "12px 24px",
+              fontSize: isSmallScreen ? "0.8rem" : ".9rem",
+              padding: isSmallScreen ? "8px 12px" : "8px 18px",
             }}
             onClick={handleEnquireNow}
           >

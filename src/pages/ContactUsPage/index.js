@@ -40,18 +40,17 @@ const ContactUsPage = () => {
             <Typography variant="h5" sx={{ marginBottom: "10px" }}>
               Our Office
             </Typography>
-            <InfoText>123 Industrial Estate, Rock Cutting Avenue</InfoText>
-            <InfoText>City XYZ, State ABC, 56789</InfoText>
-            <InfoText>Phone: +1 234 567 890</InfoText>
-            <InfoText>Email: info@rockcuttingmachinery.com</InfoText>
+            <InfoText>83 Subhash Nagar</InfoText>
+            <InfoText>Pal Road, Jodhpur (Rajasthan), 342008</InfoText>
+            <InfoText>Phone: +91-9079037599</InfoText>
+            <InfoText>Email: info@bhawanienterprise.com</InfoText>
           </Grid>
 
           <Grid item xs={12} md={6}>
             <Typography variant="h5" sx={{ marginBottom: "10px" }}>
               Business Hours
             </Typography>
-            <InfoText>Monday - Friday: 9:00 AM - 5:00 PM</InfoText>
-            <InfoText>Saturday: 10:00 AM - 2:00 PM</InfoText>
+            <InfoText>Monday - Saturday: 10:00 AM - 9:00 PM</InfoText>
             <InfoText>Sunday: Closed</InfoText>
           </Grid>
         </Grid>

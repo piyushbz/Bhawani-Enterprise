@@ -9,11 +9,12 @@ import {
   MenuItem,
   InputLabel,
   FormControl,
+  CircularProgress,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import emailjs from 'emailjs-com';
-import { ToastContainer, toast } from "react-toastify"; 
-import "react-toastify/dist/ReactToastify.css"; 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CustomButton = styled(Button)({
   backgroundColor: "#A6C111",
@@ -43,16 +44,23 @@ const ContactUs = () => {
     });
   };
 
+  const [loading, setLoading] = useState(false)
+
   const handleSubmit = (e) => {
+    setLoading(true)
     e.preventDefault();
     emailjs.send('service_fnoquif', 'template_hinqxpm', formData, 'Vc0YK2CGGx_DPEthk')
       .then((response) => {
         console.log('Email sent successfully!', response.status, response.text);
         toast.success("Message sent successfully!");
+        setLoading(false)
+
         handleClear();
       }, (err) => {
         console.error('Failed to send email. Error: ', err);
         toast.error("Failed to send the message. Please try again!");
+        setLoading(false)
+
       });
   };
 
@@ -78,14 +86,14 @@ const ContactUs = () => {
       }}
     >
       <Container maxWidth="md">
-        <Typography 
-          variant="h4" 
-          align="center" 
+        <Typography
+          variant="h4"
+          align="center"
           sx={{ fontWeight: 'bold', mb: 3, fontSize: { xs: "1.8rem", md: "2.4rem" } }}
         >
           Write To Us
         </Typography>
-        
+
         <form onSubmit={handleSubmit}>
           <Box
             sx={{
@@ -214,10 +222,10 @@ const ContactUs = () => {
           />
 
           <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
-            <CustomButton variant="contained" onClick={handleClear} sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
+            <CustomButton variant="contained" onClick={handleClear} sx={{ fontSize: { xs: "0.8rem", md: ".9rem" } }}>
               Clear
             </CustomButton>
-            <CustomButton variant="contained" type="submit" sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
+            <CustomButton variant="contained" type="submit" sx={{ fontSize: { xs: "0.8rem", md: ".9rem" } }} startIcon={loading ? <CircularProgress size={20} color="inherit" /> : null}>
               Submit
             </CustomButton>
           </Box>
