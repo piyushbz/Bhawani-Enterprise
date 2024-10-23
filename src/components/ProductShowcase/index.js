@@ -15,6 +15,7 @@ import {
 import { styled, useTheme } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
 import ContactUs from "../ContactUs";
+import LazyLoad from 'react-lazyload'; // Import LazyLoad library
 
 // Styled component for product cards
 const ProductCard = styled(Card)(({ theme }) => ({
@@ -25,7 +26,6 @@ const ProductCard = styled(Card)(({ theme }) => ({
     backgroundColor: "#4caf50", // Green on hover
   },
   textAlign: "center",
-  // padding: theme.spacing(2.5, 5),
   border: "none",
   boxShadow: "none",
   borderRadius: "20px",
@@ -72,12 +72,16 @@ const ProductShowcase = ({ products }) => {
             key={product.name}
           >
             <ProductCard onClick={() => handleOpenProductDialog(product)}>
-              <CardMedia
-                component="img"
-                image={product.image}
-                alt={product.name}
-                style={{ width: "100%", objectFit: "contain" }}
-              />
+              {/* Lazy Load for Images */}
+              <LazyLoad height={200} offset={100}>
+                <CardMedia
+                  component="img"
+                  image={product.thumbnail || product.imageWebP || product.image} // Use WebP or Thumbnail if available
+                  alt={product.name}
+                  style={{ width: "100%", objectFit: "contain" }}
+                  loading="lazy" // Lazy load for images
+                />
+              </LazyLoad>
               <CardContent>
                 <Typography
                   variant={isSmallScreen ? "body1" : "h6"}
@@ -112,7 +116,7 @@ const ProductShowcase = ({ products }) => {
               <Grid item xs={12} md={6} style={{ textAlign: "center" }}>
                 <CardMedia
                   component="img"
-                  image={selectedProduct.image}
+                  image={selectedProduct.imageWebP || selectedProduct.image} // Use WebP if available
                   alt={selectedProduct.name}
                   style={{
                     width: "100%",
@@ -120,6 +124,7 @@ const ProductShowcase = ({ products }) => {
                     objectFit: "contain",
                     marginBottom: "16px",
                   }}
+                  loading="lazy" // Lazy load for dialog image
                 />
               </Grid>
               <Grid
