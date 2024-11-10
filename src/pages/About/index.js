@@ -2,14 +2,14 @@ import React from 'react';
 import { Box, Grid, Typography, Container } from '@mui/material';
 import HeroSection from '../../components/HeroSection';
 import AboutUs from "../../public/images/aboutUs.png";
-import logo from "../../public/images/about-main.png";
+import logo from "../../public/images/logo.png";
 import VisionMissionValues from './VisionMissionValues';
 import WhyUs from './WhyUs';
 import ContactUs from '../../components/ContactUs';
 
 function About() {
   return (
-    <Box sx={{ backgroundColor: '#101010', color: '#fff' }}>
+    <Box sx={{ backgroundColor: '#f9f9f9', color: '#333' }}> {/* Light background and dark text */}
       {/* Hero Section */}
       <HeroSection 
         title="About Us" 
@@ -41,39 +41,46 @@ function About() {
             <Typography 
               variant="h5" 
               sx={{ 
-                fontWeight: 'bold', 
+                fontFamily: 'Cinzel, serif', 
+                fontWeight: '700', 
                 mb: 2, 
-                textAlign: { xs: 'center', sm: 'left' },
-                fontSize: { xs: '1.5rem', sm: '1.75rem' } // Responsive title font size
+                textAlign: 'center',
+                fontSize: { xs: '1.5rem', sm: '1.75rem' }, // Responsive title font size
+                color: '#333' // Dark text color
               }}
             >
-              About Bhawani Spice
+              About Bhawani Export
             </Typography>
 
             <Typography 
               variant="body1" 
               sx={{ 
+                fontFamily: 'Lora, serif', 
+                fontWeight: '400', 
                 lineHeight: 1.8, 
                 fontSize: { xs: '0.9rem', sm: '1rem' }, // Responsive font size for paragraphs
                 mb: 2,
                 textAlign: 'justify',
-                fontWeight: 'bold'
+                color: '#555' // Darker shade for body text
               }}
             >
               As a family-owned enterprise, the Bhawani Group owes its legacy to the 
-              parent company Surn Singh Lachhman Singh, established in 1864. 
+              parent company Bhagwati Traders, established in 1984. 
             </Typography>
 
             <Typography 
               variant="body1" 
               sx={{ 
+                fontFamily: 'Lora, serif', 
+                fontWeight: '400', 
                 lineHeight: 1.8, 
                 fontSize: { xs: '0.9rem', sm: '1rem' },
                 mb: 2,
-                textAlign: 'justify'
+                textAlign: 'justify',
+                color: '#555'
               }}
             >
-              Today, seven generations later, the Bhawani Family is still rooted firmly in 
+              Today, two generations later, the Bhagwati Family is still growing and expanding its root firmly in 
               the spice business. With an unwavering commitment to quality and service, 
               each generation has contributed to modernizing the business while widening horizons.
             </Typography>
@@ -81,12 +88,15 @@ function About() {
             <Typography 
               variant="body1" 
               sx={{ 
+                fontFamily: 'Lora, serif', 
+                fontWeight: '400', 
                 lineHeight: 1.8, 
                 fontSize: { xs: '0.9rem', sm: '1rem' },
-                textAlign: 'justify'
+                textAlign: 'justify',
+                color: '#555'
               }}
             >
-              The Bhawani Group celebrated its Sesquicentennial Year (150 years) in 2014. 
+              The Bhagwati Group celebrated its Sesquicentennial Year (40 years) in 2024. 
               Since its inception, the firm mantra has been adherence to Vintage Values, 
               Tomorrow's Technology & Global Presence.
             </Typography>
@@ -94,9 +104,9 @@ function About() {
         </Grid>
       </Container>
 
-      <VisionMissionValues/>
-      <WhyUs/>
-      <ContactUs/>
+      <VisionMissionValues />
+      <WhyUs />
+      <ContactUs />
     </Box>
   );
 }

@@ -3,6 +3,7 @@ import { Box, IconButton } from "@mui/material";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import { styled } from "@mui/system";
+import websiteVideo from '../../public/videos/1.mp4'
 
 // Styling for the hero container
 const HeroContainer = styled(Box)({
@@ -15,7 +16,7 @@ const HeroContainer = styled(Box)({
 // Styling for the video element
 const StyledVideo = styled("video")({
   width: "100%",
-  height: "100%",
+  height: "80vh",
   objectFit: "cover", // Ensure video covers the entire hero section
 });
 
@@ -60,7 +61,7 @@ const VideoHeroSection = () => {
       {/* Video Element */}
       <StyledVideo
         ref={videoRef}
-        src="https://scsoft.sirv.com/banner/Swani_Spice_Website.mp4"
+        src={websiteVideo}
         autoPlay
         loop
         muted

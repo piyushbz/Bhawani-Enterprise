@@ -15,6 +15,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
+import logo from "../../public/images/logo.png";
 
 const navLinks = [
   { label: 'Home', link: '/' },
@@ -78,20 +79,22 @@ export default function Navbar() {
             sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
           >
             <img
-              src="https://via.placeholder.com/40"
+              src={logo}
               alt="Logo"
-              style={{ marginRight: 10 }}
+              style={{ marginRight: 10, width:'40px', height:'40px' }}
             />
             <Typography
               variant="h6"
               sx={{
-                color: '#42a5f5',
+                display: 'flex',
+                alignItems: 'center',
                 fontWeight: 'bold',
                 fontSize: { xs: '1rem', md: '1.5rem' },
                 textTransform: 'none',
               }}
             >
-              Bhawani Enterprises
+              <span style={{ color: '#943d1d' }}>Bhawani</span> 
+              <span style={{ color: '#c4841b' }}>Export</span>
             </Typography>
           </IconButton>
         </Box>

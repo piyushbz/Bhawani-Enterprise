@@ -39,9 +39,11 @@ const HeroSection = ({ title, description, image }) => {
                     component="h1"
                     gutterBottom
                     sx={{
-                        fontWeight: "bold",
+                        fontFamily: "'Cinzel', serif",  // Use serif font for headings
+                        fontWeight: 700,                // Font weight for headings
                         fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" }, // Responsive title font size
                         lineHeight: 1.2,
+                        textAlign: "center",           // Justify text alignment
                     }}
                 >
                     {title}
@@ -50,10 +52,13 @@ const HeroSection = ({ title, description, image }) => {
                     variant="h6"
                     component="p"
                     sx={{
+                        fontFamily: "'Lora', serif",   // Use serif font or sans-serif for body text
+                        fontWeight: 400,               // Lighter font weight for body text
                         fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" }, // Responsive description font size
                         mt: { xs: 1, md: 2 },
                         maxWidth: { xs: "100%", sm: "80%", md: "100%" }, // Width adjustments
-                        mx: "auto", // Center alignment on smaller screens
+                        mx: "auto",                    // Center alignment on smaller screens
+                        textAlign: "justify",          // Justify text alignment
                     }}
                 >
                     {description}

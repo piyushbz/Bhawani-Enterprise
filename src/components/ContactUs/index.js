@@ -44,23 +44,21 @@ const ContactUs = () => {
     });
   };
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
-    setLoading(true)
+    setLoading(true);
     e.preventDefault();
     emailjs.send('service_fnoquif', 'template_hinqxpm', formData, 'Vc0YK2CGGx_DPEthk')
       .then((response) => {
         console.log('Email sent successfully!', response.status, response.text);
         toast.success("Message sent successfully!");
-        setLoading(false)
-
+        setLoading(false);
         handleClear();
       }, (err) => {
         console.error('Failed to send email. Error: ', err);
         toast.error("Failed to send the message. Please try again!");
-        setLoading(false)
-
+        setLoading(false);
       });
   };
 
@@ -77,8 +75,8 @@ const ContactUs = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#000",
-        color: "#fff",
+        backgroundColor: "#f9f9f9", // Light background color
+        color: "#333", // Dark text color
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -89,7 +87,14 @@ const ContactUs = () => {
         <Typography
           variant="h4"
           align="center"
-          sx={{ fontWeight: 'bold', mb: 3, fontSize: { xs: "1.8rem", md: "2.4rem" } }}
+          sx={{
+            fontFamily: "'Cinzel', serif", // Serif font for headings
+            fontWeight: 700,               // Font weight for headings
+            mb: 3,
+            fontSize: { xs: "1.8rem", md: "2.4rem" },
+            color: '#333',
+            textAlign: "center",
+          }}
         >
           Write To Us
         </Typography>
@@ -113,16 +118,14 @@ const ContactUs = () => {
               value={formData.name}
               onChange={handleChange}
               sx={{
-                backgroundColor: "#101010",
-                color: "#fff",
-                borderColor: "#333",
+                backgroundColor: "#fff",
                 mb: 2,
                 width: { xs: "100%", sm: "48%" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": { borderColor: "#fff" },
+                  "& fieldset": { borderColor: "#ccc" },
                   "&:hover fieldset": { borderColor: "#A6C111" },
                 },
-                "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#fff" },
+                "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#333" },
               }}
             />
             <TextField
@@ -135,14 +138,14 @@ const ContactUs = () => {
               value={formData.email}
               onChange={handleChange}
               sx={{
-                backgroundColor: "#101010",
+                backgroundColor: "#fff",
                 mb: 2,
                 width: { xs: "100%", sm: "48%" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": { borderColor: "#fff" },
+                  "& fieldset": { borderColor: "#ccc" },
                   "&:hover fieldset": { borderColor: "#A6C111" },
                 },
-                "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#fff" },
+                "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#333" },
               }}
             />
           </Box>
@@ -164,14 +167,14 @@ const ContactUs = () => {
               value={formData.contactNumber}
               onChange={handleChange}
               sx={{
-                backgroundColor: "#101010",
+                backgroundColor: "#fff",
                 mb: 2,
                 width: { xs: "100%", sm: "48%" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": { borderColor: "#fff" },
+                  "& fieldset": { borderColor: "#ccc" },
                   "&:hover fieldset": { borderColor: "#A6C111" },
                 },
-                "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#fff" },
+                "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#333" },
               }}
             />
             <FormControl
@@ -179,11 +182,12 @@ const ContactUs = () => {
               sx={{
                 width: { xs: "100%", sm: "48%" },
                 mb: 2,
-                "& .MuiInputLabel-root": { color: "#fff" },
+                "& .MuiInputLabel-root": { color: "#333" },
                 "& .MuiOutlinedInput-root": {
-                  "& fieldset": { borderColor: "#fff" },
+                  "& fieldset": { borderColor: "#ccc" },
                   "&:hover fieldset": { borderColor: "#A6C111" },
-                  "& .MuiOutlinedInput-input": { color: "#fff" },
+                  "& .MuiOutlinedInput-input": { color: "#333" },
+                  backgroundColor: "#fff", // Set background color to white
                 },
               }}
             >
@@ -192,7 +196,11 @@ const ContactUs = () => {
                 name="regarding"
                 value={formData.regarding}
                 onChange={handleChange}
-                sx={{ color: "#fff", "& .MuiSvgIcon-root": { color: "#fff" } }}
+                sx={{
+                  color: "#333",
+                  "& .MuiSvgIcon-root": { color: "#333" },
+                  backgroundColor: "#fff", // Ensure the dropdown has a white background
+                }}
               >
                 <MenuItem value={"Partner"}>To Partner with us</MenuItem>
                 <MenuItem value={"Query"}>General Query</MenuItem>
@@ -211,13 +219,13 @@ const ContactUs = () => {
             value={formData.message}
             onChange={handleChange}
             sx={{
-              backgroundColor: "#101010",
+              backgroundColor: "#fff",
               mb: 3,
               "& .MuiOutlinedInput-root": {
-                "& fieldset": { borderColor: "#fff" },
+                "& fieldset": { borderColor: "#ccc" },
                 "&:hover fieldset": { borderColor: "#A6C111" },
               },
-              "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#fff" },
+              "& .MuiInputLabel-root, & .MuiOutlinedInput-input": { color: "#333" },
             }}
           />
 

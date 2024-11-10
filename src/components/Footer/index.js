@@ -78,7 +78,7 @@ export default function Footer() {
                             REGISTERED OFFICE
                         </Typography>
                         <Typography sx={{ mb: 1, fontSize: { xs: '0.85rem', md: '0.95rem' } }}>
-                            <b>Bhawani Enterprise Pvt. Ltd.</b>
+                            <b>Bhawani Export Pvt. Ltd.</b>
                             <br />
                             83 Subhash Nagar Pal Road, Jodhpur, Rajasthan.<br />
                             Pincode: 342008
@@ -90,7 +90,7 @@ export default function Footer() {
                         </Box>
                         <Box sx={contactInfoStyles}>
                             <EmailIcon sx={{ color: '#cddc39', mr: 1 }} />
-                            <Typography>info@bhawanienterprise.com</Typography>
+                            <Typography>info@bhawaniexport.com</Typography>
                         </Box>
                     </Grid>
                 </Grid>

@@ -24,7 +24,7 @@ const countryLocations = [
   { name: "Argentina", coordinates: [-63.6167, -38.4161] },
   { name: "Egypt", coordinates: [30.8025, 26.8206] },
   { name: "China", coordinates: [104.1954, 35.8617] },
-  { name: "Thailand", coordinates: [100.9925, 15.870] },
+  { name: "Thailand", coordinates: [100.9925, 15.87] },
   { name: "Netherlands", coordinates: [5.2913, 52.1326] },
   { name: "Sweden", coordinates: [18.6435, 60.1282] },
   { name: "Switzerland", coordinates: [8.2275, 46.8182] },
@@ -66,9 +66,9 @@ const MapComponent = () => {
 
           <Box sx={{ position: "relative", display: "inline-block", width: "100%" }}>
             <ComposableMap
-              projectionConfig={{ scale: 140 }} // Scaled for mobile responsiveness
-              width={800}                       // Responsive width
-              height={400}                      // Responsive height
+              projectionConfig={{ scale: 140 }}
+              width={800}
+              height={400}
               style={{ width: "100%", height: "auto" }}
             >
               <Geographies geography={mapUrl}>
@@ -102,13 +102,13 @@ const MapComponent = () => {
                       cursor: "pointer",
                       transition: "transform 0.2s ease-in-out",
                     }}
-                    onMouseEnter={(e) => (e.target.style.transform = "scale(1.2)")}
+                    onMouseEnter={(e) => (e.target.style.transform = "scale(1.5)")}
                     onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
                   />
                 </Marker>
               ))}
             </ComposableMap>
-            <Tooltip id="tooltip" />
+            <Tooltip id="tooltip" style={{ backgroundColor: "#fff", color: "#333" }} />
           </Box>
 
           <Typography

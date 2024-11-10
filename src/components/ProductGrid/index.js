@@ -9,9 +9,9 @@ import wholeSpice from "../../public/images/wholeSpices.png";
 const ProductBox = styled(Box)(({ theme }) => ({
   position: "relative",
   overflow: "hidden",
-  borderRadius: theme.shape.borderRadius,
+  borderRadius: theme.shape.borderRadius * 2, // Increased the border radius for rounder edges
   transition: "transform 0.3s ease-in-out",
-  backgroundColor: "#333",
+  backgroundColor: "#f5f5f5", // Light background for product box
   "&:hover": {
     transform: "scale(1.05)",
   },
@@ -19,7 +19,7 @@ const ProductBox = styled(Box)(({ theme }) => ({
     transform: "scale(1.1)",
   },
   "&:hover .overlay": {
-    backgroundColor: "#8bc34a",
+    backgroundColor: "#cddc39", // Light green hover color
   },
 }));
 
@@ -29,11 +29,12 @@ const ImageOverlay = styled(Box)(({ theme }) => ({
   left: 0,
   right: 0,
   padding: theme.spacing(1.5),
-  color: "#fff",
-  backgroundColor: "#00b0ff",
+  color: "white", // Darker text for contrast
+  fontWeight:'bold',
+  // backgroundColor: "#ffffff", // White background for overlay
   textAlign: "center",
   transition: "background-color 0.3s ease-in-out",
-  fontSize: { xs: "1rem", sm: "1.2rem" }, // Responsive font size
+  fontSize: { xs: "1rem", sm: "1.2rem" },
 }));
 
 const Image = styled("img")({
@@ -56,13 +57,13 @@ const ProductGrid = () => {
       title: "Powders",
       img: powders,
       color: "#00b0ff",
-      link: "/product/powder",
+      link: "/product/powders",
     },
     {
       title: "Spice Blends",
       img: spiceBlends,
       color: "#00b0ff",
-      link: "/product/spices-blend",
+      link: "/product/spice-blends",
     },
   ];
 
@@ -71,8 +72,8 @@ const ProductGrid = () => {
       sx={{
         padding: { xs: 2, sm: 4 },
         textAlign: "center",
-        backgroundColor: "#000",
-        color: "#fff",
+        backgroundColor: "#ffffff", // Light theme for background
+        color: "#333",
       }}
     >
       <Container maxWidth="lg">
@@ -81,14 +82,14 @@ const ProductGrid = () => {
           gutterBottom
           sx={{
             fontWeight: "bold",
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" }, // Responsive title size
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
           }}
         >
           Products
         </Typography>
         <Grid container spacing={{ xs: 2, sm: 3 }} justifyContent="center">
           {products.map((product, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={6} sm={6} md={4} key={index}>
               <Link to={product.link} style={{ textDecoration: "none" }}>
                 <ProductBox>
                   <Image src={product.img} alt={product.title} className="image" />
