@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography, Container } from '@mui/material';
 import HeroSection from '../../components/HeroSection';
-import AboutUs from "../../public/images/aboutUs.png";
+import AboutUs from "../../public/images/about-us-banner.png";
 import logo from "../../public/images/logo.png";
 import VisionMissionValues from './VisionMissionValues';
 import WhyUs from './WhyUs';

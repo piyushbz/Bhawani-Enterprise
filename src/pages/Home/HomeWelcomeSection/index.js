@@ -9,10 +9,10 @@ import InventoryOutlinedIcon from '@mui/icons-material/InventoryOutlined';
 import websiteVideo from "../../../public/videos/Spice_Website.mp4"; // Assuming this is the correct path
 
 const stats = [
-  { icon: <CalendarMonthOutlinedIcon style={{ fontSize: "2.2rem" }} />, label: "Established", value: "1864" },
+  { icon: <CalendarMonthOutlinedIcon style={{ fontSize: "2.2rem" }} />, label: "Established", value: "1984" },
   { icon: <GroupsOutlinedIcon style={{ fontSize: "2.2rem" }} />, label: "Employees", value: "300+" },
   { icon: <AgricultureOutlinedIcon style={{ fontSize: "2.2rem" }} />, label: "Acre Farming", value: "10000+" },
-  { icon: <LanguageOutlinedIcon style={{ fontSize: "2.2rem" }} />, label: "Overseas Clients", value: "100+" },
+  { icon: <LanguageOutlinedIcon style={{ fontSize: "2.2rem" }} />, label: "Clients", value: "100+" },
   { icon: <InventoryOutlinedIcon style={{ fontSize: "2.2rem" }} />, label: "Products", value: "200+" },
 ];
 
