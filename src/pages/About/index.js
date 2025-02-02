@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Grid, Typography, Container } from '@mui/material';
 import HeroSection from '../../components/HeroSection';
-import AboutUs from "../../public/images/about-us-banner.png";
-import logo from "../../public/images/logo.png";
+import AboutUs from "../../public/images/cleaned_spices_hero_section.jpg";
+import logo from "../../public/images/full_logo.png";
 import VisionMissionValues from './VisionMissionValues';
 import WhyUs from './WhyUs';
 import ContactUs from '../../components/ContactUs';

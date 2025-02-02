@@ -66,20 +66,20 @@ const ContactUsPage = () => {
             </Typography>
             <InfoText>83 Subhash Nagar</InfoText>
             <InfoText>Pal Road, Jodhpur (Rajasthan), 342008</InfoText>
-            
+
             {/* Phone Number with WhatsApp Link and Tooltip */}
             <Tooltip title="Open in WhatsApp" arrow>
-              <InfoText 
+              <InfoText
                 sx={{ cursor: "pointer" }}
                 onClick={() => window.open("https://wa.me/+919079037599", "_blank")}
               >
                 Phone: <HighlightText component="span">+91-9079037599</HighlightText>
               </InfoText>
             </Tooltip>
-            
+
             {/* Email with Tooltip */}
             <Tooltip title="Open in Email" arrow>
-              <InfoText 
+              <InfoText
                 sx={{ cursor: "pointer" }}
                 onClick={() => window.location.href = "mailto:info@bhawaniexport.com"}
               >
@@ -102,6 +102,32 @@ const ContactUsPage = () => {
             </Typography>
             <InfoText>Monday - Saturday: 10:00 AM - 9:00 PM</InfoText>
             <InfoText>Sunday: Closed</InfoText>
+            <Typography
+              variant="h5"
+              sx={{
+                marginBottom: "15px",
+                fontFamily: "'Cinzel', serif", // Serif font for headings
+                fontWeight: 700, // Bold weight for headings
+                color: "#333",
+              }}
+            >
+              Licence
+            </Typography>
+            <InfoText
+              sx={{ cursor: "pointer" }}
+            >
+              <b>FASSAI:</b> 12224999000569
+            </InfoText>
+            <InfoText
+              sx={{ cursor: "pointer" }}
+            >
+              <b>GST:</b> 08DQFPR3134E1ZW
+            </InfoText>
+            <InfoText
+              sx={{ cursor: "pointer" }}
+            >
+              <b>IEC:</b> DQFPR3134E
+            </InfoText>
           </Grid>
         </Grid>
 
@@ -109,7 +135,7 @@ const ContactUsPage = () => {
         <Box sx={{ marginBottom: "40px", position: "relative", height: "400px" }}>
           <iframe
             title="Location Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093646!2d144.95565181583526!3d-37.817213979751575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577f8fd888b0f10!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1636612396206!5m2!1sen!2sau"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.2354135800592!2d72.98539707614633!3d26.254021977046012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418f7e9629365b%3A0xc85ef4e6f469b650!2sBHAWANI%20EXPORT!5e0!3m2!1sen!2sin!4v1738479262315!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -117,7 +143,7 @@ const ContactUsPage = () => {
             loading="lazy"
             aria-label="Google Maps Location"
           ></iframe>
-        </Box>
+          </Box>
 
         {/* Call-to-action Button */}
         <Box sx={{ textAlign: "center" }}>

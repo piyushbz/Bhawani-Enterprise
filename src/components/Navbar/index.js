@@ -15,7 +15,8 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import logo from "../../public/images/logo.png";
+import logo from "../../public/images/logo_hourse.png";
+import logo_text from "../../public/images/logo_text.png";
 
 const navLinks = [
   { label: 'Home', link: '/' },
@@ -38,7 +39,7 @@ export default function Navbar() {
       sx={{
         width: 250,
         padding: 2,
-        backgroundColor: '#1f1f1f', // Same color as navbar
+        // backgroundColor: '#1f1f1f', // Same color as navbar
         height: '100%',
       }}
     >
@@ -51,9 +52,10 @@ export default function Navbar() {
             to={item.link}
             onClick={handleDrawerToggle}
             sx={{
-              color: 'white',
+              // color: 'white',
+              color: 'black',
               textAlign: 'center',
-              ':hover': { backgroundColor: '#333' },
+              // ':hover': { backgroundColor: '#333' },
             }}
           >
             <ListItemText
@@ -70,7 +72,8 @@ export default function Navbar() {
   );
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#1f1f1f' }}>
+    // <AppBar position="static" sx={{ backgroundColor: '#1f1f1f' }}>
+    <AppBar position="static" sx={{ backgroundColor: 'white' }}>
       <Toolbar>
         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
           <IconButton
@@ -81,9 +84,14 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Logo"
-              style={{ marginRight: 10, width:'40px', height:'40px' }}
+              style={{ marginRight: 10, width: '60px', height: '40px' }}
             />
-            <Typography
+            <img
+              src={logo_text}
+              alt="Logo"
+              style={{ marginRight: 10, width:'140px', height: '40px' }}
+            />
+            {/* <Typography
               variant="h6"
               sx={{
                 display: 'flex',
@@ -95,13 +103,13 @@ export default function Navbar() {
             >
               <span style={{ color: '#943d1d' }}>Bhawani</span> 
               <span style={{ color: '#c4841b' }}>Export</span>
-            </Typography>
+            </Typography> */}
           </IconButton>
         </Box>
 
         {isMobile ? (
           <>
-            <IconButton color="inherit" onClick={handleDrawerToggle}>
+            <IconButton color="black" onClick={handleDrawerToggle}>
               <MenuIcon />
             </IconButton>
             <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
@@ -116,7 +124,9 @@ export default function Navbar() {
                 component={Link}
                 to={item.link}
                 sx={{
-                  color: 'white',
+                  // color: 'white',
+                  color: 'black',
+                  // fontWeight:'bold',
                   fontSize: { xs: '0.9rem', md: '1rem' },
                   textTransform: 'none',
                   marginLeft: { md: 1 },

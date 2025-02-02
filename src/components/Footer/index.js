@@ -92,6 +92,14 @@ export default function Footer() {
                             <EmailIcon sx={{ color: '#cddc39', mr: 1 }} />
                             <Typography>info@bhawaniexport.com</Typography>
                         </Box>
+                        <Box sx={contactInfoStyles}><b>FASSAI: </b> &nbsp;12224999000569</Box>
+
+                        <Box sx={contactInfoStyles}>
+                            <b>GST: </b> &nbsp;08DQFPR3134E1ZW
+                        </Box>
+                        <Box sx={contactInfoStyles}>
+                            <b>IEC:</b> &nbsp;DQFPR3134E
+                        </Box>
                     </Grid>
                 </Grid>
 
